@@ -2,13 +2,25 @@
 import type { WorkletFunction } from '../commonTypes';
 import type { DependencyList } from './commonTypes';
 
+// // Builds one big hash from multiple worklets' hashes.
+// export function buildWorkletsHash(
+//   worklets: Record<string, WorkletFunction> | WorkletFunction[]
+// ) {
+//   // For arrays `Object.values` returns the array itself.
+//   return Object.values(worklets).reduce(
+//     (acc, worklet: WorkletFunction) => acc + worklet.__workletHash.toString(),
+//     ''
+//   );
+// }
+
+// Updated by RichZ on 2023-12-11
 // Builds one big hash from multiple worklets' hashes.
 export function buildWorkletsHash(
   worklets: Record<string, WorkletFunction> | WorkletFunction[]
 ) {
   // For arrays `Object.values` returns the array itself.
   return Object.values(worklets).reduce(
-    (acc, worklet: WorkletFunction) => acc + worklet.__workletHash.toString(),
+    (acc, worklet: WorkletFunction) => acc + (worklet.__workletHash ? worklet.__workletHash.toString() : ''),
     ''
   );
 }
