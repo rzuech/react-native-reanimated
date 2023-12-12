@@ -116,7 +116,7 @@
     "@babel/plugin-transform-shorthand-properties": "^7.0.0",
     "@babel/plugin-transform-template-literals": "^7.0.0",
     "@babel/preset-env": "^7.20.0",
-    "@babel/types": "^7.20.0",
+    "@babel/types": "^7.23.6",
     "@react-native/eslint-config": "^0.72.2",
     "@testing-library/jest-native": "^4.0.4",
     "@testing-library/react-hooks": "^8.0.0",
